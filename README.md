@@ -35,20 +35,7 @@
 
 
 
-##一、基于SIP协议的VOIP通信，该字段通常位于视频协商sdp报文中，如：##
-- video 23456 RTP/AVP 121
-- rtpmap:121 H264/90000
-- fmtp: 121 profile-level-id=42801E;packetization-mode=1profile-level-id
-[**通过SDP调试了解视频信号**](https://community.cisco.com/t5/collaboration-voice-and-video/understand-video-signaling-with-sdp-debugs/ta-p/3158964)
-[解析profile-level-id网址](https://blog.csdn.net/liang12360640/article/details/52096499)
-[H264编码系列之profile & level控制](https://www.jianshu.com/p/48d723bb2740)
-[RFC6184 : RTP Payload Format for H.264 Video](https://tools.ietf.org/html/rfc6184#page-39)
-[主流编解码器（H.264 AVC, H.265 HEVC, VP8, VP9）比较](https://blog.csdn.net/zhangbijun1230/article/details/83659024?utm_medium=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase&depth_1-utm_source=distribute.pc_relevant.none-task-blog-BlogCommendFromMachineLearnPai2-4.nonecase)
-[H.264 profile-level-id, packetization-mode, NAL, I-frame, I-slice](http://www.comrite.com/wp/h-264-profile-level-id-packetization-mode-nal/)
-![level级别对应表](/api/file/getImage?fileId=5efc45ca09eb7d0509000506)
-
-
-## 二、分解 profile-level-id##
+###分解 profile-level-id ###
 
    profile-level-id由三部分组成：对应profile_idc（8bits）、profile_iop（8 bits）、level_idc（8 bits）
  
@@ -58,11 +45,8 @@
     > 主要档次：main profile (多应用于流媒体领域);
     > 扩展档次：extended profile (多应用于广电和存储领域);
     > 扩展档次：high profile(多用于商业场合，比如蓝光、电影、高清电视等)
-     
-   profile的划分方式：
-     ![profile划分方式](/api/file/getImage?fileId=5efae45d09eb7d05090004df)
 
- 区别：
+  - 区别：
     - (1) baseline profile:
         - 仅支持I P Slice types
         - 仅支持CAVLC熵编码
